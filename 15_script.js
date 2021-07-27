@@ -200,7 +200,7 @@ let vm = new Vue({
             return {
                 "font-size": Math.floor(this.width_tile / 3) + 'px',
                 width: this.width_field / 2 + 'px',
-                padding: '0.8rem 3rem',
+                padding: '0.8rem',
                 margin: '0 1rem'
             }
         },
