@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()"/>
+    <title>15 puzzle</title>
+    <link rel="stylesheet" href="./15_style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    
+    <div id="app">
+        <h1>15 Puzzle</h1>
+
+        <div class="gross_field">
+            <div class="field" ref="field" :style="draw_field" v-if="render">
+                <div class="tile" 
+                v-if="num !== 0" 
+                v-for="(num, index) in data"
+                
+                ref="tile"
+                @click="tileClicked($event)"
+                :style="
+                [draw_tiles, {
+                    top: width_tile * (Math.floor(index / size)) + 'px',
+                    left: width_tile * (index % size) + 'px'
+                }]">
+                {{num}}
+                </div>
+            </div>
+
+            <div class="win"
+            :style="[draw_field, gross_field]"
+            v-if="fin"
+            >Well done!!!</div>
+        </div>
+
+        <audio ref="move_sound" src="click.wav"></audio>
+        <audio ref="music" src="main_track.mp3" loop></audio>
+        <audio ref="applause" src="Fanfare-sound.mp3"></audio>
+
+        <div class="features">
+            <div
+                ref="play"
+                class="play feature"
+                :style="feature"
+                @click="play">
+            </div>
+            <button 
+                @click="shuffle" 
+                class="shuffle"
+                ref="shuffle"
+                :style="shuffle_button">
+            Mess up
+            </button>
+
+            <div class="moves feature" :style="feature">{{moves}}</div>
+        </div>
+    
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="./15_script.js"></script>
+</body>
+</html>
