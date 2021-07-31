@@ -100,7 +100,7 @@ let vm = new Vue({
             this.moves = 0;
         },
         mess() {
-            for (let i = 0; i < 200; i++) {
+            for (let i = 0; i < 300; i++) {
                 let x, y;
                 let dx, dy;
                 outer:
