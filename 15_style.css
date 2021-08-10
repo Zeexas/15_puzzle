@@ -49,7 +49,7 @@ body {
 .win {
     margin: 0 auto;
     background: lightcyan;
-    border: 20px solid cadetblue;
+    border: 25px solid cadetblue;
     position: relative;
     box-sizing: content-box;
 }
@@ -145,6 +145,11 @@ body {
 
     .wall {
         width: 90vmin;
+    }
+    
+    .field,
+    .win {
+        border: 20px solid cadetblue;
     }
 
     .feature {
